@@ -5,7 +5,8 @@ export default async function getProfileData(user: string, domain: string): Prom
         + domain + '&user=' + user;
 
     // workaround because of cors
-    getDataUrl = 'https://cors-anywhere.herokuapp.com/' + getDataUrl;
+    // getDataUrl = 'https://cors-anywhere.herokuapp.com/' + getDataUrl;
+    getDataUrl = 'https://cors-expert-widget.herokuapp.com/' + getDataUrl;
 
     const response = await fetch(getDataUrl);
     if (!response.ok) { // or check for response.status

@@ -10,7 +10,8 @@ export interface Event {
     title: string,
     expectedDurationSeconds: number,
     expectedStartTime: string,
-    price: number,
+    // price: number,
+    fullParticipantPrice: number,
     uuid: string
 }
 

@@ -12,11 +12,11 @@ interface ListElementProps {
 }
 
 const ListElement = (props: ListElementProps) => {
-    const formatPrice = (price: number) => {
-        if (price === 0) {
+    const formatPrice = (fullParticipantPrice: number) => {
+        if (fullParticipantPrice === 0) {
             return 'Preis: kostenfrei';
         } else {
-            return 'Preis: ' + price.toFixed(2).replace('.', ',') + ' €';
+            return 'Preis: ' + fullParticipantPrice.toFixed(2).replace('.', ',') + ' €';
         }
     }
 
@@ -67,7 +67,7 @@ const ListElement = (props: ListElementProps) => {
                 <Title>{props.event.title}</Title><br />
                 <Span>{formatStartTime(props.event.expectedStartTime)}</Span><br />
                 <Span>{formatDuration(props.event.expectedDurationSeconds)}</Span><br />
-                <Span>{formatPrice(props.event.price)}</Span>
+                <Span>{formatPrice(props.event.fullParticipantPrice)}</Span>
             </List>
         </Clickable >
     )
